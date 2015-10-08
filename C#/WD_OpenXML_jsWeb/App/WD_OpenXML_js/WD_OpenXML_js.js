@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
 */
 /// <reference path="../App.js" />
@@ -53,10 +53,8 @@ function getOOXML_newAPI() {
 
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
-    return context.sync().then(function (results) {
+    return context.sync().then(function () {
 
-      // 
-      if (results.status === 'succeeded') {
         currentOOXML = bodyOOXML.value;
 
         while (textArea.hasChildNodes()) {
@@ -72,14 +70,15 @@ function getOOXML_newAPI() {
         setTimeout(function () {
           report.innerText = "";
         }, 2000);
-      }
-      else {
-        currentOOXML = "";
-        report.innerText = results.error.message;
-      }
+
     });
   })
   .catch(function (error) {
+      
+      // Clear the OOXML, show the error info
+          currentOOXML = "";
+        report.innerText = error.message;    
+  
     console.log("Error: " + JSON.stringify(error));
     if (error instanceof OfficeExtension.Error) {
       console.log("Debug info: " + JSON.stringify(error.debugInfo));
@@ -118,30 +117,26 @@ function setOOXML_newAPI() {
 
       // Synchronize the document state by executing the queued commands, 
       // and return a promise to indicate task completion.
-      return context.sync().then(function (result) {
+      return context.sync().then(function () {
 
         // Tell the user we succeeded and then clear the message after a 2 second delay
-        if (result.status === "succeeded") {
           report.innerText = "The setOOXML function succeeded!";
           setTimeout(function () {
             report.innerText = "";
           }, 2000);
-        }
-        else {
-          // This runs if the method does not return a success flag
-          report.innerText = result.error.message;
-
-          // Clear the text area just so we don't give you the impression that there's
-          // valid OOXML waiting to be inserted... 
-          while (textArea.hasChildNodes()) {
-            textArea.removeChild(textArea.lastChild);
-          }
-        }
-
       });
     })
     .catch(function (error) {
-      console.log('Error: ' + JSON.stringify(error));
+
+    // Clear the text area just so we don't give you the impression that there's
+      // valid OOXML waiting to be inserted... 
+      while (textArea.hasChildNodes()) {
+        textArea.removeChild(textArea.lastChild);
+      }
+        // Let the user see the error.
+        report.innerText = error.message;
+        
+        console.log('Error: ' + JSON.stringify(error));
       if (error instanceof OfficeExtension.Error) {
         console.log('Debug info: ' + JSON.stringify(error.debugInfo));
       }
