@@ -1,5 +1,5 @@
 # Word-Add-in-Get-Set-EditOpen-XML
-This sample app shows you how to use the JavaScript methods getSelectedDataAsync and setSelectedDataAsync to get or set a variety of rich content types in a Word document. It also can act as a scratch pad to provide you with an easy way to grab the Office Open XML for your own content and test your own edited Office Open XML snippets.
+This sample app shows you how to use the getSelectedDataAsync and setSelectedDataAsync methods for Word 2013 and the getOoxml and setOoxml methods for Word 2016 (and later) to get or set a variety of rich content types in a Word document. It also can act as a scratch pad to provide you with an easy way to grab the Office Open XML for your own content and test your own edited Office Open XML snippets.
 
 **Description of the sample**
 
@@ -47,7 +47,7 @@ This sample requires:
 
 * Visual Studio 2012
 * Office 2013 tools for Visual Studio 2012
-* Word 2013
+* Word 2013 or 2016.
 
 **Key components of the sample**
 
@@ -59,7 +59,7 @@ The sample app contains:
 * The SampleDoc.docx document, which is prepopulated with various types of rich content
 * The WD_OpenXML_js Web project, which contains multiple template files. However, the two files that have been developed as part of this sample solution include:
 * WD_OpenXML_js.html (in the Pages folder). This contains the HTML user interface that is displayed in the task pane. It consists of two HTML buttons that extract and insert Office Open XML, a DIV where status messages will be written, a textarea HTML control that is used to show you Office Open XML markup, and instructional text
-* WD_OpenXML_js.js (in the Scripts folder). This script file contains code that runs when the add-in is loaded. This startup wires up the Click event handlers for the two buttons in WD_OpenXML_js.html. One of these buttons retrieves the selected document content as Office Open XML, and the other button inserts content into the document via OOXML coercion, using the contents of the text area in the task pane. All other files are automatically provided by the Visual Studio project template for an Office add-in, and they have not been modified in the development of this sample app
+* WD_OpenXML_js.js (in the Scripts folder). This script file contains code that runs when the add-in is loaded. The code checks for which APIs are supported by the host application. If the host is 2013, the application uses the common office.js API. If the host is Word 2016 or later, the add-in uses the Word Javascript API. This startup wires up the Click event handlers for the two buttons in WD_OpenXML_js.html. One of these buttons retrieves the selected document content as Office Open XML, and the other button inserts content into the document via OOXML coercion, using the contents of the text area in the task pane. All other files are automatically provided by the Visual Studio project template for an Office add-in, and they have not been modified in the development of this sample app
 
 **Configure the sample**
 
@@ -85,6 +85,7 @@ If the Add-in starts with a blank document instead of the one shown in Figure 1,
 
 * First release: Aug 2013.
 * GitHub release: August 2015
+* Uses new Word API: October 2015
 
 **Related content**
 
