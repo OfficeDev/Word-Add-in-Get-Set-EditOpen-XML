@@ -71,7 +71,9 @@ To build the sample, choose the Ctrl+Shift+B keys.
 
 **Run and test the sample**
 
-To run the sample, choose the F5 key.
+1. Choose the F5 key.
+2. On the **Home** ribbon, press **Open** in the **OOXML Editor** group.
+
 
 **Note**
 
