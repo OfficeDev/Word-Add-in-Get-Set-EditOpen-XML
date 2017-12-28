@@ -95,3 +95,6 @@ If the Add-in starts with a blank document instead of the one shown in Figure 1,
 * [Standard ECMA-376: Office Open XML File Formats](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
 * [Creating Better Add-ins for Word with Office Open XML](http://msdn.microsoft.com/EN-US/library/office/apps/dn423225.aspx)
 
+
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
