@@ -1,3 +1,16 @@
+---
+topic: sample
+products:
+- Word
+- Office 365
+languages:
+- JavaScript
+extensions:
+  contentType: samples
+  technologies:
+  - Add-ins
+  createdDate: 8/13/2015 9:40:59 AM
+---
 # Word-Add-in-Get-Set-EditOpen-XML
 This sample app shows you how to use the getSelectedDataAsync and setSelectedDataAsync methods for Word 2013 and the getOoxml and setOoxml methods for Word 2016 (and later) to get or set a variety of rich content types in a Word document. It also can act as a scratch pad to provide you with an easy way to grab the Office Open XML for your own content and test your own edited Office Open XML snippets.
 
