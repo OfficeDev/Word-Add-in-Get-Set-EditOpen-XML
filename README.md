@@ -1,17 +1,7 @@
----
-page_type: sample
-products:
-- office-word
-- office-365
-languages:
-- javascript
-extensions:
-  contentType: samples
-  technologies:
-  - Add-ins
-  createdDate: 8/13/2015 9:40:59 AM
----
-# Word-Add-in-Get-Set-EditOpen-XML
+# [ARCHIVED] Word-Add-in-Get-Set-EditOpen-XML
+
+**Note:** This repo is archived and no longer actively maintained. Security vulnerabilities may exist in the project, or its dependencies. If you plan to reuse or run any code from this repo, be sure to perform appropriate security checks on the code or dependencies first. Do not use this project as the starting point of a production Office Add-in. Always start your production code by using the Office/SharePoint development workload in Visual Studio, or the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), and follow security best practices as you develop the add-in. 
+
 This sample app shows you how to use the getSelectedDataAsync and setSelectedDataAsync methods for Word 2013 and the getOoxml and setOoxml methods for Word 2016 (and later) to get or set a variety of rich content types in a Word document. It also can act as a scratch pad to provide you with an easy way to grab the Office Open XML for your own content and test your own edited Office Open XML snippets.
 
 **Description of the sample**
